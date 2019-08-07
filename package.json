@@ -1,0 +1,13 @@
+{
+    "name": "flk-checkbox",
+    "description": "Custom checkbox inputs",
+    "version": "0.1.5",
+    "author": {
+        "email": "hassanzohdy@gmail.com",
+        "name": "Hasan Zohdy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/falakjs/flk-checkbox"
+    }
+}

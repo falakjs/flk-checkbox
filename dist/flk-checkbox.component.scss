@@ -1,0 +1,145 @@
+// all credits to https://codepen.io/Vestride/pen/dABHx
+
+$success-color: #00C851;
+$danger-color: #ff4444;
+$info-color: #33b5e5;
+$warning-color: #ffbb33;
+$primary-color: #4285F4;
+$purple-color: #aa66cc;
+$teal-color: #2BBBAD;
+$dark-color: #333;
+
+$checkbox-colors-list: (
+    success: (
+        background: #00C851,
+        border: #007E33,
+    ),
+    danger: (
+        background: #ff4444,
+        border: #CC0000,
+    ),
+    info: (
+        background: #33b5e5,
+        border: #0099CC,
+    ),
+    warning: (
+        background: #ffbb33,
+        border: #FF8800,
+    ),
+    primary: (
+        background: #4285F4,
+        border: #0d47a1,
+    ),
+    teal: (
+        background: #2BBBAD,
+        border: #00695c,
+    ),
+    purple: (
+        background: #aa66cc,
+        border: #9933CC,
+    ),
+    dark: (
+        background: #333,
+        border: #222,
+    ),
+) !default;
+
+.checker {
+    display: none;
+
+    &+label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+    }
+
+
+    // Box focus
+    &:focus+label:before {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+
+    // Box.
+    &+label:before {
+        content: '';
+        margin-top: -2px;
+        margin-#{$right}: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border: 1px solid #ccc;
+    }
+
+
+    @each $theme, $theme-options in $checkbox-colors-list {
+        &.#{$theme} {
+            &:focus+label:hover,
+            &:focus+label:before {
+                background: map-get($theme-options, background);
+                border: 1px solid map-get($theme-options, border);
+            }
+        }
+        
+        &:checked {
+            &.#{$theme},
+            &.#{$theme}+label:before {
+                background: map-get($theme-options, background);
+                border: 1px solid map-get($theme-options, border);
+            }
+        }
+    }
+
+    &:focus+label:before {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+
+    // Disabled state label.
+    &:disabled+label {
+        color: #b8b8b8;
+        cursor: auto;
+    }
+
+    // Disabled box.
+    &:disabled+label:before {
+        box-shadow: none;
+        background: #ddd;
+    }
+
+    // Checkmark. Could be replaced with an image
+    &:checked+label:after {
+        content: '';
+        position: absolute;
+
+        @if $direction==ltr {
+            left: 5px;
+        }
+
+        @else {
+            right: 13px;
+        }
+
+        top: 12px;
+        background: white;
+        width: 2px;
+        height: 2px;
+        box-shadow: 2px 0 0 white,
+        4px 0 0 white,
+        4px -2px 0 white,
+        4px -4px 0 white,
+        4px -6px 0 white,
+        4px -8px 0 white;
+        transform: rotate(45deg);
+    }
+
+    &[type="radio"] {
+        &:checked+label:after {
+            top: 11px;
+        }
+
+        &+label:before {
+            border-radius: 50%;
+        }
+    }
+}
