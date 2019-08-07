@@ -1,14 +1,5 @@
 // all credits to https://codepen.io/Vestride/pen/dABHx
 
-$success-color: #00C851;
-$danger-color: #ff4444;
-$info-color: #33b5e5;
-$warning-color: #ffbb33;
-$primary-color: #4285F4;
-$purple-color: #aa66cc;
-$teal-color: #2BBBAD;
-$dark-color: #333;
-
 $checkbox-colors-list: (
     success: (
         background: #00C851,
@@ -52,7 +43,6 @@ $checkbox-colors-list: (
         cursor: pointer;
         padding: 0;
     }
-
 
     // Box focus
     &:focus+label:before {

@@ -23,6 +23,27 @@ A component for checkbox/radio inputs for Falak JS framework.
 
 Determine wether input is checked.
 
+## type
+
+**name**: `type` | `[type]`
+
+**values**: `checkbox` | `radio`.
+
+**default**: `checkbox`
+
+
+Set the input type, either `checkbox` or `radio`.
+
+
+## Theme
+
+**name**: `theme` | `[theme]`
+
+**values**: `success` | `info` | `primary` | `warning` | `purple` | `teal` | `dark`.
+
+**default**: `success`
+
+Set the input theme color.
 
 ## label
 
