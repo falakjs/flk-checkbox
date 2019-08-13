@@ -51,7 +51,6 @@ Set the input theme color.
 
 Set the input label.
 
-
 # Missing attributes
 
 Any input attribute/event could be applied here, such as `(change)` event, `value` and so on. 
