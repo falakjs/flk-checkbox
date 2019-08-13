@@ -1,7 +1,7 @@
 {
     "name": "flk-checkbox",
     "description": "Custom checkbox inputs",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "main": "dist/flk-checkbox.component.js",
     "author": {
         "email": "hassanzohdy@gmail.com",
